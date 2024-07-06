@@ -42,10 +42,58 @@ def quick_sort(arr):
                 equalArr.append(item)
     return quick_sort(littleArr) + equalArr + quick_sort(bigArr)
 
+def merge_sort(arr) :
+    if len(arr) <= 1:
+        return arr
+    else :
+        leftArr, rightArr = arr[:len(arr)//2], arr[len(arr)//2:]
+        leftReturn, rightReturn  = merge_sort(leftArr), merge_sort(rightArr)
+        leftIndex, rightIndex = 0, 0
+        resultArr = [] # 반환값을 넣을 list
+        while leftIndex < len(leftReturn) and rightIndex < len(rightReturn):
+            if leftReturn[leftIndex] < rightReturn[rightIndex] :
+                resultArr.append(leftReturn[leftIndex])
+                leftIndex += 1
+            elif leftReturn[leftIndex] > rightReturn[rightIndex] :
+                resultArr.append(rightReturn[rightIndex])
+                rightIndex += 1
+            else :
+                resultArr.append(leftReturn[leftIndex])
+                resultArr.append(rightReturn[rightIndex])
+                leftIndex += 1
+                rightIndex += 1
+        resultArr.extend(leftReturn[leftIndex:])
+        resultArr.extend(rightReturn[rightIndex:])
+        return resultArr
+
+def merge_sort2(arr):
+    if len(arr) <= 1:
+        return arr
+    else :
+        mid = len(arr)//2
+        leftArr = merge_sort2(arr[:mid])
+        rightArr = merge_sort2(arr[mid:])
+        return merge(leftArr, rightArr)
+
+def merge(leftArr, rightArr):
+    leftIndex = rightIndex = 0
+    result = []
+    while leftIndex < len(leftArr) and rightIndex < len(rightArr) :
+        if leftArr[leftIndex] < rightArr[rightIndex]:
+            result.append(leftArr[leftIndex])
+            leftIndex += 1
+        else:
+            result.append(rightArr[rightIndex])
+            rightIndex += 1
+    result.extend(leftArr[leftIndex:])
+    result.extend(rightArr[rightIndex:])
+    return result
+
+
 num = int(input())
 numlist = [int(input()) for i in range(num)]
 
-sorted_list = quick_sort(numlist)
+sorted_list = merge_sort2(numlist)
 
 for item in sorted_list:
     print(item)
