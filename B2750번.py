@@ -27,11 +27,25 @@ def select_sort(numList):
         numList[i], numList[min] = numList[min], numList[i]
     return numList                
  
+def quick_sort(arr):
+    if len(arr) <= 1 :
+        return arr
+    else : 
+        pivot = arr[len(arr)//2]
+        littleArr, equalArr, bigArr, = [], [], []
+        for item in arr :
+            if item < pivot:
+                littleArr.append(item)
+            elif item > pivot:
+                bigArr.append(item)
+            else:
+                equalArr.append(item)
+    return quick_sort(littleArr) + equalArr + quick_sort(bigArr)
 
 num = int(input())
 numlist = [int(input()) for i in range(num)]
 
-sorted_list = select_sort(numlist)
+sorted_list = quick_sort(numlist)
 
 for item in sorted_list:
     print(item)
