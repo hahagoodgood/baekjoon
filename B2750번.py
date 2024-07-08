@@ -1,3 +1,5 @@
+import sys
+
 def bubble_sort(numlist):
     for i in range(len(numlist)):
         for j in range(len(numlist)-i-1):
@@ -90,10 +92,11 @@ def merge(leftArr, rightArr):
     return result
 
 
-num = int(input())
-numlist = [int(input()) for i in range(num)]
+num = int(sys.stdin.readline().rstrip())
+numlist = [int(sys.stdin.readline().rstrip()) for i in range(num)]
 
-sorted_list = merge_sort2(numlist)
+# 적용하고 싶은 함수를 적용하여 해결하시오! 
+sorted_list = insert_sort(numlist) 
 
 for item in sorted_list:
-    print(item)
+    sys.stdout.write(str(item) + '\n')
