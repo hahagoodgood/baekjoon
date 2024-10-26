@@ -1,6 +1,6 @@
 # url:https://www.acmicpc.net/problem/9012
-# vps인지 아닌지 확인
 
+# vps인지 아닌지 확인
 def is_vps(ps : str):
     '''
         parn_score : 여는 괄호일때 + 닫는 괄호일때 -
