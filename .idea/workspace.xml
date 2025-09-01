@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3bacecde-9685-4ebe-b701-ca59b9d046ec" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B1463.py" beforeDir="false" afterPath="$PROJECT_DIR$/B1463.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2839.py" beforeDir="false" afterPath="$PROJECT_DIR$/B2839.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +88,7 @@
       <workItem from="1756642117183" duration="5768000" />
       <workItem from="1756655572284" duration="881000" />
       <workItem from="1756700125101" duration="3400000" />
-      <workItem from="1756737049853" duration="4880000" />
+      <workItem from="1756737049853" duration="5425000" />
     </task>
     <servers />
   </component>
@@ -131,13 +131,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/B2839.py</url>
-          <line>19</line>
+          <line>24</line>
           <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/B1463.py</url>
-          <line>23</line>
-          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
