@@ -23,27 +23,28 @@
 import sys
 import math
 def B9095(n:int):
-    cnt = 0
+    '''
+    3의 갯수 2의 갯수 1의 갯수가 주어졌을 때
+    3 사이의 2을 넣는 경우의 수를 구한 후
+    3과 2의 배열 사이의 1을 넣는 경우의 수를 구하는 것과 같다.
+    '''
+    result = 0
+    # 숫자n에서 3의 갯수 구하기
     for three_idx in range(n//3+1):
+        # 숫자n에서 2의 갯수
         for two_idx in range((n-three_idx*3)//2+1):
-            cnt += 1
-    dp = [0]*cnt
-    cnt2 = 0
-    # 해당 숫자에서 3의 갯수 구하기
-    for three_idx in range(n//3+1):
-        for two_idx in range((n-three_idx*3)//2+1):
-            cnt2 += 1
-            # 3 사이에 2가 있을 자리를 순서없이 고르는 경우의 수 (n3+1)Hn2
-            result = math.factorial(three_idx+two_idx)//(math.factorial(two_idx)*math.factorial(three_idx))
-            # 3과 2의 배열에서 1이 있을 자리를 순서없이 고르는 경우의수
-            # 1이 들어가야할 자리
-            sit_one = three_idx+two_idx+1
-            # 1의 갯수
-            num_one = n-3*three_idx-2*two_idx
-            result *= math.factorial(sit_one+num_one-1)//(math.factorial(num_one)*math.factorial(sit_one-1))
-            dp[cnt2-1] = result
+            cnt = 0
+            # 3 사이의 2을 넣는 경우의 수, (n3+1) H n2
+            cnt = math.factorial(three_idx+two_idx)//(math.factorial(two_idx)*math.factorial(three_idx))
+            # 1이 들어가야 할 자리
+            num_one = three_idx+two_idx+1
+            # 숫자n에서 1의 갯수
+            one_idx = n-3*three_idx-2*two_idx
+            # 3과 2의 배열 사이의 1을 넣는 경우의 수 num_one H one_idx
+            cnt *= math.factorial(num_one+one_idx-1)//(math.factorial(one_idx)*math.factorial(num_one-1))
+            result += cnt
 
-    return sum(dp)
+    return result
 
 if __name__ == '__main__':
     n = int(sys.stdin.readline())
