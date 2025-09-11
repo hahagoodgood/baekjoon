@@ -26,19 +26,23 @@ If change cannot be given, output -1.
 import sys
 INF = 100001
 def b14916(n:int):
+    # Initialize dp table
     dp = [INF] * (n + 1 if n > 5 else 6)
     dp[0] = 0
+    #Search for the best way of 2 won or 5 won based on the minimum number of conis previusly
     for i in range(1, n+1):
+        # Calculation of the number of change coins of 2 won
         if i>=2 and dp[i-2] != INF:
             dp[i] = min(dp[i-2] + 1, dp[i])
+        # Calculation of the number of change coins of 5 won
         if i>=5 and dp[i-5] != INF:
             dp[i] = min(dp[i-5]+1, dp[i])
-
+    #When I can't give you the change
     if dp[n] == INF:
         return -1
     return dp[n]
 
-
+#inefficient code
 # def b14916(n: int):
     # if n <=4 :
     #     if n % 2 == 0:
