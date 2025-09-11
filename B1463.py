@@ -19,7 +19,7 @@ Output
 Output the minimum number of operations required on the first line.
 '''
 import sys
-def B1453(n:int):
+def b1453(n:int):
     #DP table initialization
     dp = [0]*(n+1)
     for i in range(2, n+1):
@@ -33,4 +33,4 @@ def B1453(n:int):
     return dp[n]
 
 if __name__ == '__main__':
-    sys.stdout.write(str(B1453(int(sys.stdin.readline()))))
+    sys.stdout.write(str(b1453(int(sys.stdin.readline()))))

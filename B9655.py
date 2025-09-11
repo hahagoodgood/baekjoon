@@ -37,7 +37,7 @@ If Sanggeun wins the game, it outputs SK; if Changyoung wins the game, it output
 import sys
 
 
-def B9655(N:int):
+def b9655(N:int):
     if N%2==0:return 'CY'
     return 'SK'
 
