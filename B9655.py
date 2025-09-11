@@ -42,4 +42,4 @@ def b9655(N:int):
     return 'SK'
 
 if __name__ == '__main__':
-    sys.stdout.write(B9655(int(sys.stdin.readline())))
+    sys.stdout.write(b9655(int(sys.stdin.readline())))
